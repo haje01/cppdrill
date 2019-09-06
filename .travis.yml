@@ -13,8 +13,8 @@ matrix:
       os: osx
       osx_image: xcode11
       script:
-        - brew update
-        - brew install cmake
+        # - brew update
+        # - brew install cmake
 
 
 script:
