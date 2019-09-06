@@ -12,7 +12,7 @@ matrix:
     - name: "Python 3.7 on macOS"
       os: osx
       osx_image: xcode11
-      script:
+      # script:
         # - brew update
         # - brew install cmake
 
