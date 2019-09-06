@@ -8,9 +8,9 @@ matrix:
       dist: bionic
       script:
         - sudo apt-get install -y cmake python3 python3-dev
+
     - name: "Python 3.7 on macOS"
       os: osx
-      compiler
       osx_image: xcode11
       script:
         - brew update
