@@ -12,4 +12,4 @@ script:
   - cd build
   - cmake ..
   - cmake --build . -- -j2
-  - make test
+  - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2

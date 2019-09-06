@@ -1,13 +1,12 @@
 #include <stdio.h>
-#include <assert.h>
-
 #include <lib.hpp>
 
-void testBasic()
-{
-    assert(getMessage().size() > 0);
-}
+#define CATCH_CONFIG_MAIN
+#include <catch2/catch.hpp>
 
-int main() {
-    testBasic();
+
+TEST_CASE("Basic test.", "Test1") {
+    SECTION("sa") {
+        REQUIRE( getMessage().size() == 0 );
+    }
 }
