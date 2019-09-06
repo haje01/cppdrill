@@ -7,6 +7,6 @@
 
 TEST_CASE("Basic test.", "Test1") {
     SECTION("sa") {
-        REQUIRE( getMessage().size() == 0 );
+        REQUIRE( getMessage().size() > 0 );
     }
 }
