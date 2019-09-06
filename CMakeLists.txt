@@ -7,3 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src)
 add_subdirectory(test)
+
+# set(PYBIND11_CPP_STANDARD -std=c++14)
+# add_subdirectory(pybind11)
