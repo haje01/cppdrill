@@ -1,5 +1,5 @@
 language: cpp
-env: OS_PYTHON_VERSIONS=3.7
+
 python:
   - "3.5"
   - "3.6"
@@ -7,18 +7,18 @@ python:
 
 matrix:
   include:
-    - name: "Python on Bionic Linux"
+    - name: "Bionic Linux"
       os: linux
       dist: bionic
-      script:
-        - sudo apt-get install -y cmake python3 python3-dev
+      # script:
+      #  - sudo apt-get install -y cmake python3 python3-dev
 
-    - name: "Python on macOS"
+    - name: "macOS"
       os: osx
       osx_image: xcode11
-      # script:
-        # - brew update
-        # - brew install cmake
+
+    - name: "Windows"
+      os: windows
 
 
 script:
