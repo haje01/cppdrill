@@ -24,3 +24,5 @@ target_link_libraries(pymylib
 PUBLIC
     mylib
 )
+set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/bin)
+message("CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}")
