@@ -27,7 +27,7 @@ matrix:
 
 
 script:
-  - cd build
+  - mkdir build && cd build
   - cmake ..
   - cmake --build . --parallel 2
   - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
