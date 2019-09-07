@@ -1,15 +1,19 @@
 language: cpp
 env: OS_PYTHON_VERSIONS=3.7
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
 
 matrix:
   include:
-    - name: "Python 3.7 on Bionic Linux"
+    - name: "Python on Bionic Linux"
       os: linux
       dist: bionic
       script:
         - sudo apt-get install -y cmake python3 python3-dev
 
-    - name: "Python 3.7 on macOS"
+    - name: "Python on macOS"
       os: osx
       osx_image: xcode11
       # script:
@@ -18,7 +22,6 @@ matrix:
 
 
 script:
-  - pyenv global 3.7.1
   - cd build
   - cmake ..
   - cmake --build . -- -j2
