@@ -1,12 +1,9 @@
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_library(mylib SHARED
     lib.cpp
 )
-
-# add_library(pymylib SHARED
-#     pylib.cc
-# )
-# target_link_libraries(pymylib PUBLIC mylib)
 
 target_include_directories(mylib
 PUBLIC
