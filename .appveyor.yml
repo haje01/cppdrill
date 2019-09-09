@@ -28,7 +28,7 @@ build_script:
   - cmake --build . --config %CONFIGURATION%
 
 on_failure:
-  - type "C:/projects/cppdrill/build/CMakeFiles/CMakeOutput.log"
+  - type "C:\projects\cppdrill\build\CMakeFiles\CMakeOutput.log"
 
 test_script:
   - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mylib_test.exe'
