@@ -8,6 +8,10 @@ platform:
 - x64
 - x86
 
+configuration:
+  - Release
+  - Debug
+
 environment:
   matrix:
   - PYTHON: 37
@@ -19,5 +23,8 @@ build_script:
   - cd ..
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 15"
-  - cmake --build . --config Debug
+  - cmake .. -DCMAKE_BUILD_TYPE=$(CONFIGURATION) -G "Visual Studio 15"
+  - cmake --build . --config $(CONFIGURATION)
+
+test_scritp:
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mylib_test.exe
