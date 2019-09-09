@@ -16,8 +16,8 @@ PUBLIC
     ${CMAKE_SOURCE_DIR}/include
 )
 
-set(PYBIND11_CPP_STANDARD -std=c++14)
-set(PYBIND11_PYTHON_VERSION=3.7)
+# set(PYBIND11_CPP_STANDARD -std=c++14)
+# set(PYBIND11_PYTHON_VERSION=3.7)
 add_subdirectory(${CMAKE_SOURCE_DIR}/externals/pybind11
     ../build/externals/pybind11
 )
