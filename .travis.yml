@@ -1,8 +1,6 @@
-language: cpp
+language: python
 
 python:
-  - "3.5"
-  - "3.6"
   - "3.7"
 
 matrix:
@@ -21,6 +19,7 @@ matrix:
 
     - name: "Windows"
       os: windows
+      env: CMAKE_BUILD_TYPE=Release
       before_install:
         - choco install python3
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
@@ -33,6 +32,6 @@ script:
   - cmake --version
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=Release
-  - cmake --build . --config Release --parallel 2
+  - cmake ..
+  - cmake --build . --parallel 2
   - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
