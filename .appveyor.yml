@@ -23,8 +23,8 @@ build_script:
   - cd ..
   - mkdir build
   - cd build
-  - echo "CONFIGURATION $(CONFIGURATION)"
-  - cmake .. -DCMAKE_BUILD_TYPE=$(CONFIGURATION) -G "Visual Studio 16"
+  - echo "CONFIGURATION %CONFIGURATION%"
+  - cmake .. -DCMAKE_BUILD_TYPE=%CONFIGURATION% -G "Visual Studio 16"
   - cmake --build . --config $(CONFIGURATION)
 
 test_script:
