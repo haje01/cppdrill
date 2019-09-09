@@ -28,9 +28,10 @@ matrix:
         - type C:/Users/travis/build/haje01/cppdrill/build/CMakeFiles/CMakeOutput.log
 
 
+
 script:
   - cmake --version
   - mkdir build && cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=Release
+  - cmake ..
   - cmake --build . --parallel 2
   - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
