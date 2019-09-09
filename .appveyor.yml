@@ -12,7 +12,6 @@ environment:
   matrix:
   - PYTHON: 37
     CPP: 14
-    CONFIG: Debug
 
 build_script:
   - cd externals
@@ -20,5 +19,5 @@ build_script:
   - cd ..
   - mkdir build
   - cd build
-  - cmake .. -G "Visual Studio 15"
-  - cmake --build .
+  - cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 15"
+  - cmake --build . --config Debug
