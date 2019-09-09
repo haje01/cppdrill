@@ -1,5 +1,5 @@
 image:
-  - Visual Studio 2017
+  - Visual Studio 2019
 
 build:
   parallel: true
@@ -23,7 +23,8 @@ build_script:
   - cd ..
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=$(CONFIGURATION) -G "Visual Studio 15"
+  - echo "CONFIGURATION $(CONFIGURATION)"
+  - cmake .. -DCMAKE_BUILD_TYPE=$(CONFIGURATION) -G "Visual Studio 16"
   - cmake --build . --config $(CONFIGURATION)
 
 test_script:
