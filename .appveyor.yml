@@ -26,5 +26,5 @@ build_script:
   - cmake .. -DCMAKE_BUILD_TYPE=$(CONFIGURATION) -G "Visual Studio 15"
   - cmake --build . --config $(CONFIGURATION)
 
-test_scritp:
+test_script:
   - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mylib_test.exe'
