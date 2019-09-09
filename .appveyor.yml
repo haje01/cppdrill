@@ -27,4 +27,4 @@ build_script:
   - cmake --build . --config $(CONFIGURATION)
 
 test_scritp:
-  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mylib_test.exe
+  - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\mylib_test.exe'
