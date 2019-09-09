@@ -16,9 +16,8 @@ environment:
     CONFIG: Debug
 
 build_script:
-  - cmd:
-    - mkdir build
-    - cd build
-    # CMake uses Visual Studio *VERSION NUMBER*, not its name
-    - cmake c:\works\cppdrill -G "Visual Studio 15" # = Visual Studio 2017
-    - cmake --build . --config Debug  # Runs faster than Release
+  - cmd: >-
+    mkdir build
+    cd build
+    cmake c:\works\cppdrill -G "Visual Studio 15"
+    cmake --build . --config Debug
