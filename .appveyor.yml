@@ -17,5 +17,5 @@ environment:
 build_script:
   - mkdir build
   - cd build
-  - cmake c:\works\cppdrill -G "Visual Studio 15"
+  - cmake .. -G "Visual Studio 15"
   - cmake --build . --config Debug
