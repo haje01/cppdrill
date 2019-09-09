@@ -1,7 +1,19 @@
-images:
+image:
   - Visual Studio 2017
 
 clone_folder: c:\works
+build:
+  parallel: true
+
+platform:
+- x64
+- x86
+
+environment:
+  matrix:
+  - PYTHON: 37
+    CPP: 14
+    CONFIG: Debug
 
 build_script:
   - cmd:
