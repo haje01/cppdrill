@@ -24,11 +24,13 @@ matrix:
       before_install:
         - choco install python3
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
+      after_failure:
+        - type C:/Users/travis/build/haje01/cppdrill/build/CMakeFiles/CMakeOutput.log
 
 
 script:
   - cmake --version
   - mkdir build && cd build
-  - cmake ..
+  - cmake .. -DCMAKE_BUILD_TYPE=Release
   - cmake --build . --parallel 2
   - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
