@@ -1,7 +1,7 @@
 image:
   - Visual Studio 2017
 
-clone_folder: c:\works
+# clone_folder: c:/works
 build:
   parallel: true
 
