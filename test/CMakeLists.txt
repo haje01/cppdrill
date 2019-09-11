@@ -1,16 +1,11 @@
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
 add_executable(mylib_test test.cpp)
 
+# Catch2 for test
 set(CATCH_DIR "${EXTERNAL_DIR}/Catch2")
 add_subdirectory(${CATCH_DIR} ../build/externals/Catch2)
 target_link_libraries(mylib_test Catch2::Catch2 mylib)
 
-# set(CATCH_INCLUDE_DIR ${EXTERNAL_DIR}/Catch2/single_include)
-# message("Catch DIR ${CATCH_INCLUDE_DIR}")
-# target_link_libraries(mylib_test mylib)
-# target_include_directories(mylib_test PUBLIC ${CATCH_INCLUDE_DIR})
-
+# Add test
 add_test(
 NAME
     test_mylib
