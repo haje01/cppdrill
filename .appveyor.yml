@@ -16,6 +16,10 @@ install:
   - dir C:
 
 build_script:
+  - echo %CONFIG%
+  - echo %CONFIGURATION%
+  - echo $(CONFIG)
+  - echo $(CONFIGURATION)
   - cd externals
   - git submodule update --init --recursive
   - cd ..
@@ -25,4 +29,8 @@ build_script:
   - cmake --build . --config %CONFIG%
 
 test_script:
+  - echo %CONFIG%
+  - echo %CONFIGURATION%
+  - echo $(CONFIG)
+  - echo $(CONFIGURATION)
   - ctest -C %CONFIG%
