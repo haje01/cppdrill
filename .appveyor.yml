@@ -13,7 +13,8 @@ configuration:
   - Debug
 
 environment:
-  - PYTHON: C:\Python37
+  matrix:
+    - PYTHON: C:\Python37
 
 # install:
 #   - dir C:
