@@ -14,18 +14,22 @@ configuration:
 
 environment:
   matrix:
-  - PYTHON: 37
-    CPP: 14
+    - PYTHON: C:\Python37
+
+# install:
+#   - dir C:
 
 build_script:
+  - echo %CONFIGURATION%
   - cd externals
   - git submodule update --init --recursive
   - cd ..
+  - set PATH=%PYTHON%;%PATH%
   - mkdir build
   - cd build
-  - cmake .. -G "Visual Studio 15"
-  - cmake --build . --config $(CONFIGURATION)
+  - cmake .. 
+  - cmake --build . --config %CONFIGURATION%
 
 test_script:
-  - cd build
-  - ctest -C '%CONFIGURATION%'
+  - echo %CONFIGURATION%
+  - ctest -C %CONFIGURATION%

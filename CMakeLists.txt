@@ -15,6 +15,9 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(EXTERNAL_DIR ${CMAKE_SOURCE_DIR}/externals)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(Python_ADDITIONAL_VERSIONS 3.7 3.5)
+message("Python_ADDITIONAL_VERSIONS ${Python_ADDITIONAL_VERSIONS}")  
+find_package(PythonInterp 3)
 
 add_subdirectory(src)
 
