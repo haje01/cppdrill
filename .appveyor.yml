@@ -12,25 +12,20 @@ configuration:
   - Release
   - Debug
 
-install:
-  - dir C:
+# install:
+#   - dir C:
 
 build_script:
-  - echo %CONFIG%
+  - dir C:\
   - echo %CONFIGURATION%
-  - echo $(CONFIG)
-  - echo $(CONFIGURATION)
   - cd externals
   - git submodule update --init --recursive
   - cd ..
   - mkdir build
   - cd build
   - cmake .. 
-  - cmake --build . --config %CONFIG%
+  - cmake --build . --config %CONFIGURATION%
 
 test_script:
-  - echo %CONFIG%
   - echo %CONFIGURATION%
-  - echo $(CONFIG)
-  - echo $(CONFIGURATION)
-  - ctest -C %CONFIG%
+  - ctest -C %CONFIGURATION%
