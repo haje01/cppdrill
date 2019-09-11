@@ -16,7 +16,6 @@ configuration:
 #   - dir C:
 
 build_script:
-  - dir C:\
   - echo %CONFIGURATION%
   - cd externals
   - git submodule update --init --recursive
