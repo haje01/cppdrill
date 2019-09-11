@@ -15,7 +15,6 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/externals/pybind11
 )
 # Prevent `cmake __create_def` error for Visual Studio Release DLL
 set(PYBIND11_LTO_CXX_FLAGS "")
-message("Python_ADDITIONAL_VERSIONS ${Python_ADDITIONAL_VERSIONS}")  
 pybind11_add_module(pymylib SHARED pylib.cpp)
 target_include_directories(pymylib
 PUBLIC
