@@ -24,8 +24,6 @@ build_script:
   - cd externals
   - git submodule update --init --recursive
   - cd ..
-  - echo %PATH%
-  - echo %PYTHON%
   - set PATH=%PYTHON%;%PATH%
   - mkdir build
   - cd build
