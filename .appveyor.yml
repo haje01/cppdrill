@@ -13,7 +13,7 @@ configuration:
   - Debug
 
 install:
-  - choco install python3
+  - dir C:
 
 build_script:
   - cd externals
