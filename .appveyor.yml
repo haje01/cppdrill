@@ -12,6 +12,9 @@ configuration:
   - Release
   - Debug
 
+environment:
+  - PYTHON: 'C:\\Python37'
+  
 # install:
 #   - dir C:
 
@@ -20,6 +23,8 @@ build_script:
   - cd externals
   - git submodule update --init --recursive
   - cd ..
+  - echo %PYTHON%
+  - set PATH=%PYTHON%;%PATH%
   - mkdir build
   - cd build
   - cmake .. 
