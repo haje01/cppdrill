@@ -13,7 +13,6 @@ matrix:
       osx_image: xcode11
       python: "3.7"
 
-
 script:
   - cmake --version
   - mkdir build

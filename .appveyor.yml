@@ -12,10 +12,8 @@ configuration:
   - Release
   - Debug
 
-# environment:
-#   matrix:
-#   - PYTHON: 37
-#     CPP: 14
+install:
+  - choco install python3
 
 build_script:
   - cd externals
@@ -27,6 +25,4 @@ build_script:
   - cmake --build . --config %CONFIG%
 
 test_script:
-  - cd # for pwd
-  - cd build
   - ctest -C %CONFIG%
