@@ -19,11 +19,7 @@ target_link_libraries(test_all
 # target_link_libraries(test_tbb ${TBB_LIBRARIES})
 # message("TBB_INCLUDE_DIRS ${TBB_INCLUDE_DIRS}")
 
-# set(CATCH_INCLUDE_DIR ${EXTERNAL_DIR}/Catch2/single_include)
-# message("Catch DIR ${CATCH_INCLUDE_DIR}")
-# target_link_libraries(mylib_test mylib)
-# target_include_directories(mylib_test PUBLIC ${CATCH_INCLUDE_DIR})
-
+# Add test
 add_test(
 NAME
     test_all

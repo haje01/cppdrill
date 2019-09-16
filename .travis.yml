@@ -1,9 +1,4 @@
-language: cpp
-
-python:
-  - "3.5"
-  - "3.6"
-  - "3.7"
+language: generic
 
 matrix:
   include:
@@ -12,23 +7,16 @@ matrix:
       dist: bionic
       before_install:
         - pyenv global 3.7.1
-      # script:
-      #  - sudo apt-get install -y cmake python3 python3-dev
 
     - name: "macOS"
       os: osx
       osx_image: xcode11
-
-    - name: "Windows"
-      os: windows
-      before_install:
-        - choco install python3
-        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
-
+      python: "3.7"
 
 script:
   - cmake --version
-  - mkdir build && cd build
+  - mkdir build
+  - cd build
   - cmake ..
   - cmake --build . --parallel 2
   - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
