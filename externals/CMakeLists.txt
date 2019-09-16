@@ -2,7 +2,7 @@
 # PyBind11
 #
 set(PYBIND11_CPP_STANDARD -std=c++14)
-set(PYBIND11_PYTHON_VERSION=3.7)
+# set(PYBIND11_PYTHON_VERSION=3.7)
 # Prevent `cmake __create_def` error for Visual Studio Release DLL
 set(PYBIND11_LTO_CXX_FLAGS "")
 add_subdirectory(${EXTERNAL_DIR}/pybind11
