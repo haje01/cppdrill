@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(EXTERNAL_DIR ${CMAKE_SOURCE_DIR}/externals)
 
+add_subdirectory(externals)
 add_subdirectory(src)
 
 enable_testing()

@@ -1,10 +1,23 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_executable(mylib_test test.cpp)
+find_package(TBB REQUIRED tbb tbbmalloc) 
 
-set(CATCH_DIR "${EXTERNAL_DIR}/Catch2")
-add_subdirectory(${CATCH_DIR} ../build/externals/Catch2)
-target_link_libraries(mylib_test Catch2::Catch2 mylib)
+add_executable(test_all
+    test_mylib.cpp
+    test_tbb.cpp
+)
+
+target_link_libraries(test_all
+    Catch2::Catch2 
+    ${TBB_IMPORTED_TARGETS}
+    mylib
+)
+
+# add_executable(test_tbb test_tbb.cpp)
+# target_include_directories(test_tbb PRIVATE ${TBB_INCLUDE_DIRS})
+# target_compile_definitions(test_tbb PRIVATE ${TBB_DEFINITIONS})
+# target_link_libraries(test_tbb ${TBB_LIBRARIES})
+# message("TBB_INCLUDE_DIRS ${TBB_INCLUDE_DIRS}")
 
 # set(CATCH_INCLUDE_DIR ${EXTERNAL_DIR}/Catch2/single_include)
 # message("Catch DIR ${CATCH_INCLUDE_DIR}")
@@ -13,7 +26,9 @@ target_link_libraries(mylib_test Catch2::Catch2 mylib)
 
 add_test(
 NAME
-    test_mylib
+    test_all
 COMMAND
-    mylib_test
+    test_all
 )
+
+
