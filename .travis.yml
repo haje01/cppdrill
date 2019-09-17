@@ -13,6 +13,7 @@ matrix:
       osx_image: xcode11
       python: "3.7"
       before_install:
+      # Missing /usr/include somtimes..
       - sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 
 script:
@@ -21,4 +22,4 @@ script:
   - cd build
   - cmake ..
   - cmake --build . --parallel 2
-  - CTEST_OUTPUT_ON_FAILURE=1 ctest -j 2
+  - bin/test_all
