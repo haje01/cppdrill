@@ -29,13 +29,13 @@ install:
 
 before_build:
   - ps: |
-    # Set appropriate VCVARS
-    $Architecture = $env:PLATFORM # simplified, works for x86 and x64
-    if ("$env:APPVEYOR_BUILD_WORKER_IMAGE" -eq "Visual Studio 2015") {
-      $env:VCVARSALL = "`"$env:VCVAR2015`" $Architecture"
-    } else {
-      $env:VCVARSALL = "`"$env:VCVAR2017`" $Architecture"
-    }
+      # Set appropriate VCVARS
+      $Architecture = $env:PLATFORM # simplified, works for x86 and x64
+      if ("$env:APPVEYOR_BUILD_WORKER_IMAGE" -eq "Visual Studio 2015") {
+        $env:VCVARSALL = "`"$env:VCVAR2015`" $Architecture"
+      } else {
+        $env:VCVARSALL = "`"$env:VCVAR2017`" $Architecture"
+      }
   - call %VCVARSALL%
 
 build_script:
