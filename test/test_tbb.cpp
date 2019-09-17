@@ -13,7 +13,7 @@ class ApplyPower {
 public:
     void operator()( const blocked_range<size_t> & r) const {
         float * a = my_a;
-        for(size_t i= r.begin(); i != r.end(); ++i) 
+        for(size_t i= r.begin(); i != r.end(); ++i)
             power(a[i]);
     }
     ApplyPower( float a[] ) : my_a(a) {}

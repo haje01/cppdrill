@@ -16,8 +16,9 @@ environment:
   matrix:
     - PYTHON: C:\Python37
 
-# install:
-#   - dir C:
+install:
+  # for TBB
+  - copy C:\msys64\mingw64\bin\mingw32-make.exe C:\msys64\mingw64\bin\gmake.exe
 
 build_script:
   - echo %CONFIGURATION%
