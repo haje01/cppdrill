@@ -29,6 +29,8 @@ add_subdirectory(${EXTERNAL_DIR}/json ../build/externals/json)
 #
 set (TBB_ROOT "${EXTERNAL_DIR}/tbb")
 set (TBB_DIR "${TBB_ROOT}/cmake")
+set (TBB_ROOT ${TBB_ROOT} PARENT_SCOPE)
+set (TBB_DIR ${TBB_DIR} PARENT_SCOPE)
 include(${TBB_DIR}/TBBBuild.cmake)
 tbb_build(TBB_ROOT ${TBB_ROOT} CONFIG_DIR TBB_DIR)
 find_package(TBB REQUIRED tbb tbbmalloc)
