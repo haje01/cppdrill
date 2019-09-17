@@ -17,6 +17,7 @@ environment:
     - PYTHON: C:\Python37
 
 install:
+  - echo %PATH%
   - dir c:\cygwin\bin
   - dir c:\cygwin64\bin
 
