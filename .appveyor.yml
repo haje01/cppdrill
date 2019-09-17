@@ -13,6 +13,8 @@ configuration:
   - Debug
 
 environment:
+  VCVAR2015: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
+  VCVAR2017: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat'
   matrix:
     - PYTHON: C:\Python37
 
