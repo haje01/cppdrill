@@ -1,3 +1,4 @@
+enable_testing()
 add_executable(mylib_test test.cpp)
 
 # Catch2 for test

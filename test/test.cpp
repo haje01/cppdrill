@@ -10,7 +10,7 @@ TEST_CASE("Basic test.", "Test1") {
         REQUIRE( getMessage().size() > 0 );
     }
     SECTION("io") {
-        std::cout << dumpJSON() << std::endl;
+        // std::cout << dumpJSON() << std::endl;
         REQUIRE( dumpJSON().size() > 0 );
     }
 }
