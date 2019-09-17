@@ -17,5 +17,6 @@ set(EXTERNAL_DIR ${CMAKE_SOURCE_DIR}/externals)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 find_package(PythonInterp 3)
 
+add_subdirectory(externals)
 add_subdirectory(src)
 add_subdirectory(test)
