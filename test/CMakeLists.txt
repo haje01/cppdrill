@@ -9,6 +9,7 @@ target_link_libraries(test_all
     Catch2::Catch2
     ${TBB_IMPORTED_TARGETS}
     mylib
+    tbb
 )
 
 # add_executable(test_tbb test_tbb.cpp)

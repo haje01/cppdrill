@@ -20,6 +20,6 @@ script:
   - cmake --version
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake .. -DTBB_BUILD_STATIC=OFF -DTBB_BUILD_TESTS=OFF
   - cmake --build . --parallel 2
   - bin/test_all

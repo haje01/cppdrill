@@ -13,8 +13,8 @@ configuration:
   - Debug
 
 environment:
-  VCVAR2015: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
-  VCVAR2017: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat'
+  # VCVAR2015: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
+  # VCVAR2017: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat'
   matrix:
     - PYTHON: C:\Python37
 
@@ -25,23 +25,22 @@ install:
   # - dir C:\msys64\mingw64\bin\
 
   # for TBB
-  - mkdir C:\bin
-  - copy C:\msys64\mingw64\bin\mingw32-make.exe C:\bin\gmake.exe
-  - set PATH=%PATH%;C:\bin\
+  # - mkdir C:\bin
+  # - copy C:\msys64\mingw64\bin\mingw32-make.exe C:\bin\gmake.exe
+  # - set PATH=%PATH%;C:\bin\
 
-before_build:
-  - ps: |
-      # Set appropriate VCVARS
-      $Architecture = $env:PLATFORM # simplified, works for x86 and x64
-      if ("$env:APPVEYOR_BUILD_WORKER_IMAGE" -eq "Visual Studio 2015") {
-        $env:VCVARSALL = "`"$env:VCVAR2015`" $Architecture"
-      } else {
-        $env:VCVARSALL = "`"$env:VCVAR2017`" $Architecture"
-      }
-  - call %VCVARSALL%
+# before_build:
+#   - ps: |
+#       # Set appropriate VCVARS
+#       $Architecture = $env:PLATFORM # simplified, works for x86 and x64
+#       if ("$env:APPVEYOR_BUILD_WORKER_IMAGE" -eq "Visual Studio 2015") {
+#         $env:VCVARSALL = "`"$env:VCVAR2015`" $Architecture"
+#       } else {
+#         $env:VCVARSALL = "`"$env:VCVAR2017`" $Architecture"
+#       }
+#   - call %VCVARSALL%
 
 build_script:
-  - cl.exe
   - echo %CONFIGURATION%
   - cd externals
   - git submodule update --init --recursive
@@ -50,7 +49,7 @@ build_script:
   - mkdir build
   - cd build
   - cmake --version
-  - cmake ..
+  - cmake .. -DTBB_BUILD_STATIC=OFF -DTBB_BUILD_TESTS=OFF
   - cmake --build . --config %CONFIGURATION%
 
 test_script:
