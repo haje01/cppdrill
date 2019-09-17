@@ -6,7 +6,6 @@ build:
 
 platform:
 - x64
-- x86
 
 configuration:
   - Release
@@ -26,6 +25,7 @@ install:
   - mkdir C:\bin
   - copy C:\msys64\mingw64\bin\mingw32-make.exe C:\bin\gmake.exe
   - set PATH=%PATH%;C:\bin\
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
 
 build_script:
   - echo %CONFIGURATION%
