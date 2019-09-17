@@ -23,8 +23,9 @@ install:
   - dir C:\msys64\mingw64\bin\
 
   # for TBB
-  - copy C:\msys64\mingw64\bin\mingw32-make.exe C:\msys64\mingw64\bin\gmake.exe
-  - set PATH=%PATH%;C:\msys64\mingw64\bin\
+  - mkdir C:\bin
+  - copy C:\msys64\mingw64\bin\mingw32-make.exe C:\bin\gmake.exe
+  - set PATH=%PATH%;C:\bin\
 
 build_script:
   - echo %CONFIGURATION%
