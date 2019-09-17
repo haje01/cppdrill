@@ -7,3 +7,6 @@
 [submodule "externals/json"]
 	path = externals/json
 	url = https://github.com/nlohmann/json.git
+[submodule "externals/tbb"]
+	path = externals/tbb
+	url = https://github.com/wjakob/tbb.git
