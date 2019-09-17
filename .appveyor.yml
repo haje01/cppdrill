@@ -20,8 +20,6 @@ install:
   # - dir c:\cygwin\bin
   # - dir c:\cygwin64\bin
   # - dir C:\msys64\mingw64\bin\
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-  - cl.exe
 
   # for TBB
   - mkdir C:\bin
@@ -29,6 +27,7 @@ install:
   - set PATH=%PATH%;C:\bin\
 
 build_script:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   - echo %CONFIGURATION%
   - cd externals
   - git submodule update --init --recursive
