@@ -31,6 +31,7 @@ set (TBB_ROOT "${EXTERNAL_DIR}/tbb")
 set (TBB_DIR "${TBB_ROOT}/cmake")
 include(${TBB_DIR}/TBBBuild.cmake)
 tbb_build(TBB_ROOT ${TBB_ROOT} CONFIG_DIR TBB_DIR)
+find_package(TBB REQUIRED tbb tbbmalloc)
 
 # list(APPEND CMAKE_MODULE_PATH ${TBB_DIR})
 # list(APPEND CMAKE_PREFIX_PATH TBB)
