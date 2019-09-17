@@ -1,7 +1,5 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-find_package(TBB REQUIRED tbb tbbmalloc)
-
 add_executable(test_all
     test_mylib.cpp
     test_tbb.cpp
