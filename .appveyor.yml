@@ -27,7 +27,8 @@ install:
   - set PATH=%PATH%;C:\bin\
 
 build_script:
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"  # for TBB
+  - cl.exe
   - echo %CONFIGURATION%
   - cd externals
   - git submodule update --init --recursive
