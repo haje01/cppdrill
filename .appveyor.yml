@@ -27,7 +27,8 @@ build_script:
   - set PATH=%PYTHON%;%PATH%
   - mkdir build
   - cd build
-  - cmake .. 
+  - cmake --version
+  - cmake ..
   - cmake --build . --config %CONFIGURATION%
 
 test_script:

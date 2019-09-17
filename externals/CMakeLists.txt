@@ -24,16 +24,18 @@ set(JSON_BuildTests OFF CACHE INTERNAL "")
 add_subdirectory(${EXTERNAL_DIR}/json ../build/externals/json)
 
 
-
 #
 # TBB
 #
-set(TBB_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/tbb/)
+set(TBB_ROOT ${EXTERNAL_DIR}/tbb/)
 set(TBB_ROOT ${TBB_ROOT} PARENT_SCOPE)
+message("TBB_ROOT ${TBB_ROOT}")
 include(${TBB_ROOT}/cmake/TBBBuild.cmake)
 tbb_build(
     TBB_ROOT ${TBB_ROOT}
     MAKE_ARGS tbb_build_dir=${CMAKE_CURRENT_BINARY_DIR}/tbb/
     CONFIG_DIR TBB_DIR)
 set(TBB_DIR ${TBB_DIR} PARENT_SCOPE)
+list(APPEND CMAKE_PREFIX_PATH ${TBB_DIR})
+message("CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}")
 
