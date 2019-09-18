@@ -25,3 +25,6 @@ target_link_libraries(pymylib
 PRIVATE
     mylib
 )
+
+# Release에서 __create_def 에러 방지 ($<$<NOT:$<CONFIG:Debug>>:/GL> 제거)
+set_target_properties(pymylib PROPERTIES COMPILE_OPTIONS  "/W4;$<$<COMPILE_LANGUAGE:CXX>:>;/bigobj;$<$<NOT:$<CONFIG:Debug>>:$<$<COMPILE_LANGUAGE:CXX>:/MP>>")
