@@ -30,4 +30,4 @@ build_script:
 
 test_script:
   - echo %CONFIGURATION%
-  - bin/%CONFIGURATION%/test_all.exe
+  - bin\%CONFIGURATION%\test_all.exe

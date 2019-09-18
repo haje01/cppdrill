@@ -26,5 +26,7 @@ PRIVATE
     mylib
 )
 
-# prevent script error of __create_def in Release mode (remove $<$<NOT:$<CONFIG:Debug>>:/GL>)
-set_target_properties(pymylib PROPERTIES COMPILE_OPTIONS  "/W4;$<$<COMPILE_LANGUAGE:CXX>:>;/bigobj;$<$<NOT:$<CONFIG:Debug>>:$<$<COMPILE_LANGUAGE:CXX>:/MP>>")
+if (MSVC)
+    # prevent __create_def error in Release mode (remove $<$<NOT:$<CONFIG:Debug>>:/GL>)
+    set_target_properties(pymylib PROPERTIES COMPILE_OPTIONS  "/W4;$<$<COMPILE_LANGUAGE:CXX>:>;/bigobj;$<$<NOT:$<CONFIG:Debug>>:$<$<COMPILE_LANGUAGE:CXX>:/MP>>")
+endif()
